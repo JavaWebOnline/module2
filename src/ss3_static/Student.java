@@ -1,8 +1,8 @@
 package ss3_static;
 
 public class Student {
-    private int id;
-    private String name;
+    private int id; // biến toàn cụ
+    private String name; // biến toàn cụ
 
     static String schoolName = "Bách Khoa";
 
