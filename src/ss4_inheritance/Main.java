@@ -1,5 +1,6 @@
 package ss4_inheritance;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -46,6 +47,10 @@ public class Main {
      */
 
     static Scanner scanner = new Scanner(System.in);
+
+    static ArrayList<ManagementEmployee> managementEmployees = new ArrayList<>();
+    static ArrayList<ProductionEmployee> productionEmployees = new ArrayList<>();
+
 
     public static void main(String[] args) {
 
@@ -100,7 +105,10 @@ public class Main {
 
                 switch (choose) {
                     case 1:
-                        // Code logic tại đây
+                        ManagementEmployee managementEmployee = new ManagementEmployee();
+                        managementEmployee.input();
+                        managementEmployees.add(managementEmployee);
+                        System.out.println("Thêm mới thành công");
                         break;
                     case 2:
                         // Code logic tại đây
@@ -133,7 +141,11 @@ public class Main {
 
                 switch (choose) {
                     case 1:
-                        // Code logic tại đây
+                        System.out.println("==== Thông tin nhân viên quản lý ==== ");
+                        for(int i = 0; i < managementEmployees.size(); i++) {
+                            System.out.println("Thông tin nhân viên thứ " + (i + 1));
+                            managementEmployees.get(i).output();
+                        }
                         break;
                     case 2:
                         // Code logic tại đây
