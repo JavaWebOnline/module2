@@ -140,7 +140,28 @@ public class Main {
     }
 
     private static void menuUpdate() {
-        // Code logic tại đây
+        System.out.print("Nhập vào mã muốn cập nhật: ");
+        String id = scanner.nextLine();
+
+        if(id.startsWith("QL")) {
+            boolean isExistEmployee = false;
+            for(int i = 0; i < managementEmployees.size(); i++) {
+                if(managementEmployees.get(i).getId().equals(id)) {
+                    isExistEmployee = true;
+                    managementEmployees.get(i).input();
+                    System.out.println("Cập nhật thành công!");
+                    break;
+                }
+            }
+
+            if(!isExistEmployee) {
+                System.out.println("Không tìm thấy mã muốn cập nhật!");
+            }
+        } else if(id.startsWith("SX")) {
+
+        } else {
+            System.out.println("Mã không hợp lệ!");
+        }
     }
 
     private static void menuShowList() {
