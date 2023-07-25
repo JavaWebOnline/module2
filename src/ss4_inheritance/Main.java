@@ -53,8 +53,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-
-
         int choose;
         while (true) {
             do {
@@ -107,6 +105,7 @@ public class Main {
                     case 1:
                         ManagementEmployee managementEmployee = new ManagementEmployee();
                         managementEmployee.input();
+                        managementEmployee.setId(getIdManagement());
                         managementEmployees.add(managementEmployee);
                         System.out.println("Thêm mới thành công");
                         break;
@@ -120,6 +119,24 @@ public class Main {
                 }
             } while (choose < 1 || choose > 3);
         }
+    }
+
+    private static String getIdManagement() {
+        // max id => id + 1
+        if(managementEmployees.size() == 0) {
+            return "QL001";
+        }
+
+        int max = Integer.parseInt(managementEmployees.get(0).getId().substring(2));
+
+        for(int i = 0; i <managementEmployees.size(); i++) {
+            int id = Integer.parseInt(managementEmployees.get(i).getId().substring(2));
+            if(max < id) {
+                max = id;
+            }
+        }
+
+        return String.format("QL%3d", max + 1).replace(" ", "0");
     }
 
     private static void menuUpdate() {
