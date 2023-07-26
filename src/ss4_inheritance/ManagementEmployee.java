@@ -26,6 +26,7 @@ public class ManagementEmployee extends Employee {
         this.coefficientsSalary = Double.parseDouble(scanner.nextLine());
     }
 
+    @Override
     public void output() {
         super.output();
         System.out.println("Lương cơ bản: " + this.basicSalary);
