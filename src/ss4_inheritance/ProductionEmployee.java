@@ -2,8 +2,13 @@ package ss4_inheritance;
 
 import java.util.Scanner;
 
-public class ProductionEmployee extends Employee {
+public abstract class ProductionEmployee extends Employee {
     private double numberProducts;
+
+//    @Override
+    public double calculateSalary() {
+        return numberProducts * 1000000;
+    }
 
     public ProductionEmployee() {
     }

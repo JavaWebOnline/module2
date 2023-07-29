@@ -6,6 +6,11 @@ public class ManagementEmployee extends Employee {
     private double basicSalary;
     private double coefficientsSalary;
 
+//    @Override
+    public double calculateSalary() {
+        return basicSalary * coefficientsSalary;
+    }
+
     public ManagementEmployee() {
     }
 

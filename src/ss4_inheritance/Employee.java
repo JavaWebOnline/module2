@@ -2,11 +2,13 @@ package ss4_inheritance;
 
 import java.util.Scanner;
 
-public class Employee {
+public abstract class Employee {
     private String id;
     private String fullName;
     private String dayOfBirth;
     private String address;
+
+    public abstract double calculateSalary();
 
     public Employee() {
     }
