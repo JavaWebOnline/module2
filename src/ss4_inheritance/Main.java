@@ -48,8 +48,9 @@ public class Main {
 
     static Scanner scanner = new Scanner(System.in);
 
-    static ArrayList<ManagementEmployee> managementEmployees = new ArrayList<>();
-    static ArrayList<ProductionEmployee> productionEmployees = new ArrayList<>();
+    //    static ArrayList<ManagementEmployee> managementEmployees = new ArrayList<>();
+//    static ArrayList<ProductionEmployee> productionEmployees = new ArrayList<>();
+    static ArrayList<Employee> employees = new ArrayList<>();
 
 
     public static void main(String[] args) {
@@ -106,7 +107,7 @@ public class Main {
                         ManagementEmployee managementEmployee = new ManagementEmployee();
                         managementEmployee.input();
                         managementEmployee.setId(getIdManagement());
-                        managementEmployees.add(managementEmployee);
+                        employees.add(managementEmployee);
                         System.out.println("Thêm mới thành công");
                         break;
                     case 2:
@@ -121,17 +122,29 @@ public class Main {
         }
     }
 
+    private static ArrayList<ManagementEmployee> getManagementEmployees() {
+        ArrayList<ManagementEmployee> managementEmployees = new ArrayList<>();
+        for(int i = 0; i < employees.size(); i++) {
+            if(employees.get(i) instanceof ManagementEmployee) {
+                managementEmployees.add((ManagementEmployee) employees.get(i));
+            }
+        }
+
+        return managementEmployees;
+    }
+
     private static String getIdManagement() {
+        ArrayList<ManagementEmployee> managementEmployees = getManagementEmployees();
         // max id => id + 1
-        if(managementEmployees.size() == 0) {
+        if (managementEmployees.size() == 0) {
             return "QL001";
         }
 
         int max = Integer.parseInt(managementEmployees.get(0).getId().substring(2));
 
-        for(int i = 0; i <managementEmployees.size(); i++) {
+        for (int i = 0; i < managementEmployees.size(); i++) {
             int id = Integer.parseInt(managementEmployees.get(i).getId().substring(2));
-            if(max < id) {
+            if (max < id) {
                 max = id;
             }
         }
@@ -143,21 +156,21 @@ public class Main {
         System.out.print("Nhập vào mã muốn cập nhật: ");
         String id = scanner.nextLine();
 
-        if(id.startsWith("QL")) {
+        if (id.startsWith("QL")) {
             boolean isExistEmployee = false;
-            for(int i = 0; i < managementEmployees.size(); i++) {
-                if(managementEmployees.get(i).getId().equals(id)) {
+            for (int i = 0; i < employees.size(); i++) {
+                if (employees.get(i).getId().equals(id) && employees.get(i) instanceof ManagementEmployee) {
                     isExistEmployee = true;
-                    managementEmployees.get(i).input();
+                    employees.get(i).input();
                     System.out.println("Cập nhật thành công!");
                     break;
                 }
             }
 
-            if(!isExistEmployee) {
+            if (!isExistEmployee) {
                 System.out.println("Không tìm thấy mã muốn cập nhật!");
             }
-        } else if(id.startsWith("SX")) {
+        } else if (id.startsWith("SX")) {
 
         } else {
             System.out.println("Mã không hợp lệ!");
@@ -180,16 +193,23 @@ public class Main {
                 switch (choose) {
                     case 1:
                         System.out.println("==== Thông tin nhân viên quản lý ==== ");
-                        for(int i = 0; i < managementEmployees.size(); i++) {
-                            System.out.println("Thông tin nhân viên thứ " + (i + 1));
-                            managementEmployees.get(i).output();
+                        int count = 1;
+                        for (int i = 0; i < employees.size(); i++) {
+                            if(employees.get(i) instanceof ManagementEmployee) {
+                                System.out.println("Thông tin nhân viên thứ " + count++);
+                                employees.get(i).output();
+                            }
                         }
                         break;
                     case 2:
                         // Code logic tại đây
                         break;
                     case 3:
-                        // Code logic tại đây
+                        System.out.println("==== Thông tin tất cả nhân viên ==== ");
+                        for (int i = 0; i < employees.size(); i++) {
+                                System.out.println("Thông tin nhân viên thứ " + (i + 1));
+                                employees.get(i).output();
+                        }
                         break;
                     case 4:
                         return;
