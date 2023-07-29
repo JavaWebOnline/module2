@@ -2,7 +2,7 @@ package ss4_inheritance;
 
 import java.util.Scanner;
 
-public abstract class ProductionEmployee extends Employee {
+public abstract class ProductionEmployee extends Employee implements TimeKeeping {
     private double numberProducts;
 
 //    @Override
