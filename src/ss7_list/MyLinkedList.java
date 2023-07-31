@@ -38,11 +38,32 @@ public class MyLinkedList {
         }
     }
 
+    public void add(int index, int value) {
+        if (index < 0 || index > size) {
+            System.out.println("Ngoài phạm vi");
+        } else if (index == 0) {
+            addFirst(value);
+        } else if (index == size) {
+            addLast(value);
+        } else {
+            Node temp = head;
+
+            for (int i = 1; i < index; i++) {
+                temp = temp.next;
+            }
+
+            Node newNode = new Node(value);
+            newNode.next = temp.next;
+            temp.next = newNode;
+            size++;
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         Node temp = head;
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             stringBuilder.append(temp.value).append("\t");
             temp = temp.next;
         }

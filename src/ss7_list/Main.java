@@ -14,11 +14,13 @@ public class Main {
 //        System.out.println(myArrayList);
 
         MyLinkedList myLinkedList = new MyLinkedList();
-        myLinkedList.addFirst(10); // 20 10
-        myLinkedList.addFirst(20);
-        myLinkedList.addFirst(30);
+        myLinkedList.addLast(10); // 20 10
+        myLinkedList.addLast(20);
+        myLinkedList.addLast(30);
         myLinkedList.addLast(40);
         myLinkedList.addLast(50);
+        myLinkedList.add(2, 99);
+        myLinkedList.add(2, 98);
 
         System.out.println(myLinkedList);
     }
