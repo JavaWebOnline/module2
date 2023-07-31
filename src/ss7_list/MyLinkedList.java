@@ -27,6 +27,17 @@ public class MyLinkedList {
         size++;
     }
 
+    public void addLast(int value) {
+        if (head == null) {
+            addFirst(value);
+        } else {
+            Node newNode = new Node(value);
+            tail.next = newNode;
+            tail = newNode;
+            size++;
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();

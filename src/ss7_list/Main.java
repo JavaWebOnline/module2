@@ -17,6 +17,8 @@ public class Main {
         myLinkedList.addFirst(10); // 20 10
         myLinkedList.addFirst(20);
         myLinkedList.addFirst(30);
+        myLinkedList.addLast(40);
+        myLinkedList.addLast(50);
 
         System.out.println(myLinkedList);
     }
