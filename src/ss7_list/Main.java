@@ -5,12 +5,19 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        MyArrayList myArrayList = new MyArrayList();
-        myArrayList.add(10);
-        myArrayList.add(20);
-        myArrayList.add(30);
-        myArrayList.add(40);
+//        MyArrayList myArrayList = new MyArrayList();
+//        myArrayList.add(10);
+//        myArrayList.add(20);
+//        myArrayList.add(30);
+//        myArrayList.add(40);
+//
+//        System.out.println(myArrayList);
 
-        System.out.println(myArrayList);
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.addFirst(10); // 20 10
+        myLinkedList.addFirst(20);
+        myLinkedList.addFirst(30);
+
+        System.out.println(myLinkedList);
     }
 }
