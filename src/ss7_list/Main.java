@@ -19,8 +19,12 @@ public class Main {
         myLinkedList.addLast(30);
         myLinkedList.addLast(40);
         myLinkedList.addLast(50);
-        myLinkedList.add(2, 99);
-        myLinkedList.add(2, 98);
+//        myLinkedList.add(2, 99);
+//        myLinkedList.add(2, 98);
+
+        System.out.println(myLinkedList.removeFirst());
+        System.out.println(myLinkedList.removeFirst());
+        System.out.println(myLinkedList.removeFirst());
 
         System.out.println(myLinkedList);
     }

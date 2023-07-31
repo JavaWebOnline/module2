@@ -59,6 +59,22 @@ public class MyLinkedList {
         }
     }
 
+    public Integer removeFirst() {
+        if (head == null) {
+            return null;
+        }
+
+        Node temp = head;
+        if (size == 1) {
+            head = null;
+            tail = null;
+        } else {
+            head = head.next;
+        }
+        size--;
+        return temp.value;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
