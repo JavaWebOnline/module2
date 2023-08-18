@@ -22,9 +22,13 @@ public class Main {
 //        myLinkedList.add(2, 99);
 //        myLinkedList.add(2, 98);
 
-        System.out.println(myLinkedList.removeFirst());
-        System.out.println(myLinkedList.removeFirst());
-        System.out.println(myLinkedList.removeFirst());
+//        System.out.println(myLinkedList.removeFirst());
+//        System.out.println(myLinkedList.removeFirst());
+//        System.out.println(myLinkedList.removeFirst());
+
+        System.out.println(myLinkedList.removeLast());
+        System.out.println(myLinkedList.removeLast());
+        System.out.println(myLinkedList.removeLast());
 
         System.out.println(myLinkedList);
     }

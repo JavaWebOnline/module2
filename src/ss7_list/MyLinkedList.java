@@ -75,6 +75,28 @@ public class MyLinkedList {
         return temp.value;
     }
 
+    public Integer removeLast() {
+        if (head == null) {
+            return null;
+        }
+
+        Node temp = head;
+        if (size == 1) {
+            head = null;
+            tail = null;
+        } else {
+            for(int i = 2; i < size; i++) {
+                temp = temp.next;
+            }
+
+            tail = temp;
+            temp = temp.next;
+            tail.next = null;
+        }
+        size--;
+        return temp.value;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
