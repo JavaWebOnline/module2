@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class StackStudy {
     public static void main(String[] args) {
-        Stack<Integer> integers = new Stack<>();
+        MyStack<Integer> integers = new MyStack<>();
 
         int n = 6;
         while (n != 0) {
