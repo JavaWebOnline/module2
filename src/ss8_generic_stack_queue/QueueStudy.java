@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class QueueStudy {
     public static void main(String[] args) {
-        Queue<Integer> queue = new LinkedList<>();
+        MyQueue<Integer> queue = new MyQueue<>();
 
         queue.add(10);
         queue.add(20);
