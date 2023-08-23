@@ -19,5 +19,18 @@ public class TreeSetStudy {
         for (Integer item : integerSet) {
             System.out.println(item);
         }
+
+        Set<Student> students = new TreeSet<>();
+
+        students.add(new Student(1, "Nguyễn Văn A", 7.4));
+        students.add(new Student(2, "Nguyễn Văn B", 6.2));
+        students.add(new Student(3, "Nguyễn Văn C", 7.4));
+        students.add(new Student(4, "Nguyễn Văn D", 8.6));
+        students.add(new Student(5, "Nguyễn Văn E", 5.6));
+
+
+        for (Student item : students) {
+            System.out.println(item);
+        }
     }
 }
