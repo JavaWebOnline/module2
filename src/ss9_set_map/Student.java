@@ -2,7 +2,7 @@ package ss9_set_map;
 
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student>{
     private int id;
     private String name;
     private double score;
@@ -60,5 +60,10 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", score=" + score +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return Double.compare(this.score, o.score);
     }
 }
