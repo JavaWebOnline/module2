@@ -3,7 +3,7 @@ package ss9_set_map;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Main {
+public class HashSetStudy {
     public static void main(String[] args) {
 //        Set<Integer> integerSet = new HashSet<>();
 //
